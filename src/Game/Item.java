@@ -1,0 +1,32 @@
+package Game;
+
+import java.io.Serializable;
+
+public class Item implements Serializable{
+
+	private String name;
+	private String weight;
+	
+	public Item(String n, String w) {
+		name = n;
+		weight = w;
+	}
+	
+	public String getItem() {
+		return name;
+	}
+	
+	public String getWeight() {
+		return weight;
+	}
+	
+	public void setItem(String n, String w)  {
+		name = n;
+		weight = w;
+	}
+	
+	public String toString() {
+		String s = name;
+		return s;
+	}
+}

@@ -1,0 +1,31 @@
+Tent
+You find yourself in a small tent. You recognize the tent but don't exactly remember getting it out to go camping. 
+There is a sleeping bag and a lantern on the ground. A large tear reveals a very green area to your south. 
+#
+MossLands
+You are in a field but the ground is all... moss? It feels very nice on your feet, not sure why you aren't wearing shoes but you do you. 
+The moss seems to have no end but as you move around things get much closer. Your tent stands to your North, There seems to be thick fog 
+to your West, You can see very small huts in the distance to your south, and you can hear some splashing to your East!
+#
+Pond
+You are standing on the dock of a small pond. You seem to have teleported to this dock once you got close enough to the water sound. 
+You see fish swimming around, a tackle box,and a large wooden chair. Looks like a cozy fishing spot. You can go back to the Moss to your West.
+#
+AbandonedVillage
+You found an abandoned village! The small huts kept growing as you got closer and now you realize the 
+huts were massive! all the buildings and supplies are abandoned and useless but you see a tree house on the tree next to you! 
+A ladder leads up to the tree house. Hopefully you aren't scared of heights because the ladder is not short!
+#
+Fog
+You can't see anything because of the fog... Go back where you came from (East).
+#
+Treehouse
+This is a rather small tree house. It looks very weak but seems sturdy as you crawl around. 
+You find some batteries, a bird's nest, and a fan. You can go back down to the village, but just a tip 
+don't look down!
+#
+MushroomForest
+The fog has cleared and you find yourself in a beautiful mushroom forest! 
+There is every kind of mushroom and a fairy in the distance! You can go back to the fog if you want to. 
+Thats to the East if you somehow forgot.
+#
