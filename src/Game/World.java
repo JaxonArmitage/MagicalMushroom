@@ -15,18 +15,16 @@ public class World {
 		Room treehouse = new Room("Treehouse");
 		Room fog = new Room("Fog");
 		Room mushroomForest = new Room("MushroomForest");
-		Item magicalKey = new Item("magicalkey", "l");  //in the birdnest
-		Item notMagicalKey = new Item("notmagicalkey", "l"); //in the tacklebox 
-		Item fan = new Item("fan", "l"); 
-		Item wood = new Item("wood", "l"); //from using hammer on chair
-		Item sleepingBag = new Item("sleepingbag", "h");
-		Item lantern = new Item("Lantern", "l");
-		Item fish = new Item("fish", "h");
-		Item chair = new Item("chair", "h");
-		Item tacklebox = new Item("tacklebox", "l");
-		Item batteries = new Item("batteries", "l");
-		Item birdnest = new Item("birdnest", "l");
-		Item hammer = new Item("hammer", "l"); //in the tacklebox
+		Item magicalKey = new Item("magicalkey");  //in the birdnest
+		Item fan = new Item("fan"); 
+		Item wood = new Item("wood"); //from using hammer on chair
+		Item sleepingBag = new Item("sleepingbag");
+		Item lantern = new Item("Lantern");
+		Item fish = new Item("fish");
+		Item chair = new Item("chair");
+		Item tacklebox = new Tacklebox();
+		Item batteries = new Item("batteries");
+		Item birdnest = new Item("birdnest");
 		tent.addItem(sleepingBag);
 		tent.addItem(lantern);
 		pond.addItem(fish);
@@ -47,7 +45,10 @@ public class World {
 		abandonedVillage.addExit(treehouse, 4);
 		treehouse.addExit(abandonedVillage, 5);
 		mushroomForest.addExit(fog, 0);
-		
+		fish.setWeight("h");
+		chair.setWeight("h");
+		tacklebox.setWeight("h");
+		mushroomForest.setLock(true);
 
 		return tent;
 	}

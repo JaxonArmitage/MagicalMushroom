@@ -6,8 +6,9 @@ import java.util.HashMap;
 public class Room implements Serializable {
 
 	private String name;
-	private HashMap<String, Item> items;
+	public static HashMap<String, Item> items;
 	private Room room[];
+	private Boolean lock;
 	private static HashMap<String, Room> rooms;
 	
 	// Constructor Method
@@ -17,9 +18,9 @@ public class Room implements Serializable {
 		room = new Room[6];
 		rooms = new HashMap<>();
 		rooms.put(name, this);
+		lock = false;
 	}
 
-	// Get Methods
 	public String getName() {
 		return name;
 	}
@@ -32,7 +33,14 @@ public class Room implements Serializable {
 		return rooms;
 	}
 	
-	// Set Methods
+	public boolean getLock() {
+		return lock;
+	}
+	
+	public void setLock(Boolean x) {
+		lock = x;
+	}
+	
 	public void setName(String n) {
 		name = n;
 	}
@@ -59,7 +67,7 @@ public class Room implements Serializable {
 	public void addItem(Item x) {
 		items.put(x.getItem(), x);
 	}
-	
+
 	public void removeItem(String n) {
 		items.remove(n);
 	}
