@@ -15,16 +15,14 @@ public class World {
 		Room treehouse = new Room("Treehouse");
 		Room fog = new Room("Fog");
 		Room mushroomForest = new Room("MushroomForest");
-		Item magicalKey = new Item("magicalkey");  //in the birdnest
 		Item fan = new Item("fan"); 
-		Item wood = new Item("wood"); //from using hammer on chair
 		Item sleepingBag = new Item("sleepingbag");
 		Item lantern = new Item("Lantern");
 		Item fish = new Item("fish");
 		Item chair = new Item("chair");
 		Item tacklebox = new Tacklebox();
 		Item batteries = new Item("batteries");
-		Item birdnest = new Item("birdnest");
+		Item birdnest = new Birdsnest();
 		tent.addItem(sleepingBag);
 		tent.addItem(lantern);
 		pond.addItem(fish);
@@ -49,7 +47,7 @@ public class World {
 		chair.setWeight("h");
 		tacklebox.setWeight("h");
 		mushroomForest.setLock(true);
-
+		treehouse.setLock(true);
 		return tent;
 	}
 }

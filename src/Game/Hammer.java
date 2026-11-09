@@ -15,7 +15,7 @@ public class Hammer extends Item{
 				Game.print("You already used the hammer to break the wooden chair!");
 			} else {
 				Game.print("You use the hammer on the chair and break it up into nice wood pieces!");
-				Game.getCurrentRoom().addItem(new Item("wood"));
+				Game.getCurrentRoom().addItem(new Wood());
 				Game.getCurrentRoom().removeItem("chair");
 				usedHammer = true;
 			}
