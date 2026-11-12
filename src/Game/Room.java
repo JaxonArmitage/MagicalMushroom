@@ -10,7 +10,8 @@ public class Room implements Serializable {
 	private Room room[];
 	private Boolean lock;
 	private static HashMap<String, Room> rooms;
-	
+	private NPC npc;
+
 	// Constructor Method
 	public Room(String n) {
 		name = n;
@@ -19,6 +20,7 @@ public class Room implements Serializable {
 		rooms = new HashMap<>();
 		rooms.put(name, this);
 		lock = false;
+		npc = null;
 	}
 
 	public String getName() {
@@ -32,15 +34,15 @@ public class Room implements Serializable {
 	public static HashMap<String, Room> getRooms() {
 		return rooms;
 	}
-	
+
 	public boolean getLock() {
 		return lock;
 	}
-	
+
 	public void setLock(Boolean x) {
 		lock = x;
 	}
-	
+
 	public void setName(String n) {
 		name = n;
 	}
@@ -48,7 +50,7 @@ public class Room implements Serializable {
 	public static void setRooms(HashMap<String, Room> r) {
 		rooms = r;
 	}
-	
+
 	// Special Method
 	public String toString() {
 		String s = name;
@@ -63,7 +65,7 @@ public class Room implements Serializable {
 	public Room getExit(int a) {
 		return room[a];
 	}
-	
+
 	public void addItem(Item x) {
 		items.put(x.getItem(), x);
 	}
@@ -75,5 +77,21 @@ public class Room implements Serializable {
 	public Item getItem(String n) {
 		return items.get(n);
 	}
-	
+
+	public void addNPC(NPC x) {
+		npc = x;
+	}
+
+	public void removeNPC(String n) {
+		npc = null;
+	}
+
+	public NPC getNpc() {
+		return npc;
+	}
+
+	public void setNpc(NPC npc) {
+		this.npc = npc;
+	}
+
 }

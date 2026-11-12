@@ -125,7 +125,7 @@ public class Game {
 			i++;
 		}
 		if (item == null) {
-			if(Room.items.containsKey(n)) {
+			if (Room.items.containsKey(n)) {
 				item = Room.items.get(n);
 				item.use();
 			} else {
@@ -145,7 +145,7 @@ public class Game {
 			i++;
 		}
 		if (item == null) {
-			if(Room.items.containsKey(n)) {
+			if (Room.items.containsKey(n)) {
 				item = Room.items.get(n);
 				item.open();
 			} else {
@@ -153,46 +153,60 @@ public class Game {
 			}
 		}
 	}
-		public static void closeItem(String n) {
-			int i = 0;
-			Item item = null;
-			while (i < inventory.size()) {
-				if (n.equals(inventory.get(i).getItem())) {
-					item = inventory.get(i);
-					item.close();
-				}
-				i++;
+
+	public static void closeItem(String n) {
+		int i = 0;
+		Item item = null;
+		while (i < inventory.size()) {
+			if (n.equals(inventory.get(i).getItem())) {
+				item = inventory.get(i);
+				item.close();
 			}
-			if (item == null) {
-				if(Room.items.containsKey(n)) {
-					item = Room.items.get(n);
-					item.close();
-				} else {
-					Game.print("You don't see that item anywhere");
-				}
+			i++;
+		}
+		if (item == null) {
+			if (Room.items.containsKey(n)) {
+				item = Room.items.get(n);
+				item.close();
+			} else {
+				Game.print("You don't see that item anywhere");
 			}
 		}
-	
-		public static void readItem(String n) {
-			int i = 0;
-			Item item = null;
-			while (i < inventory.size()) {
-				if (n.equals(inventory.get(i).getItem())) {
-					item = inventory.get(i);
-					item.read();
-				}
-				i++;
+	}
+
+	public static void readItem(String n) {
+		int i = 0;
+		Item item = null;
+		while (i < inventory.size()) {
+			if (n.equals(inventory.get(i).getItem())) {
+				item = inventory.get(i);
+				item.read();
 			}
-			if (item == null) {
-				if(Room.items.containsKey(n)) {
-					item = Room.items.get(n);
-					item.read();
-				} else {
-					Game.print("You don't see that item anywhere");
-				}
+			i++;
+		}
+		if (item == null) {
+			if (Room.items.containsKey(n)) {
+				item = Room.items.get(n);
+				item.read();
+			} else {
+				Game.print("You don't see that item anywhere");
 			}
 		}
+	}
+
 	
+
+	public static void talkNPC(String n) {
+		NPC x = currentRoom.getNpc();
+		if (x == null) {
+			Game.print("There is no NPC in this room!");
+		} else if(!n.equals(x.getName())) {
+			Game.print("That NPC is not in this room!");
+		} else {
+			x.talk();
+		}
+	}
+
 	public static void runGameGui() {
 
 		makeMap();
@@ -331,6 +345,12 @@ public class Game {
 						readItem(separate[1]);
 					} else {
 						Game.print("read what?");
+					}
+				}   else if(separate[0].equals("talk")) { 
+					if (separate.length > 1) {
+						talkNPC(separate[1]);
+					} else {
+						Game.print("talk to who?");
 					}
 				} else {
 					Game.print("You can't do that!");

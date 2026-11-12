@@ -23,6 +23,7 @@ public class World {
 		Item tacklebox = new Tacklebox();
 		Item batteries = new Item("batteries");
 		Item birdnest = new Birdsnest();
+		NPC mushroomgod = new MushroomGod();
 		tent.addItem(sleepingBag);
 		tent.addItem(lantern);
 		pond.addItem(fish);
@@ -48,6 +49,7 @@ public class World {
 		tacklebox.setWeight("h");
 		mushroomForest.setLock(true);
 		treehouse.setLock(true);
+		mossLands.addNPC(mushroomgod); //TEST normally in mushroomForest
 		return tent;
 	}
 }
